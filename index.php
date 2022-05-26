@@ -20,24 +20,17 @@ require_once __DIR__ . "/Models/Prodotto.php";
 include __DIR__ . "/Models/AlimentazioneCane.php";
 include __DIR__ . "/Models/AlimentazioneGatto.php";
 include __DIR__ . "/Models/AccessoriCane.php";
-include __DIR__ . "/Models/CartaDiCredito.php";
+require __DIR__ . "/Models/Utente.php";
+require __DIR__ . "/Models/Carta_di_credito.php";
+
 
 $cane1 = new AlimentazioneCane('Monge', 'Croccantini', 'Cibo per cani' , '15€', 'scandeza: 07/2022', 'disponibile', '12 unità', '0.15g Proteine per 100g');
-$cane2 = new AlimentazioneCane('Pro-Plan', 'carne umida', 'Cibo per cani' , '35€', 'scandeza: 09/2022', 'non disponibile', '7 unità', '0.20g Proteine per 100g');
-$accessori_cane = New AccessoriCane('Seresto', 'Collare Antipulci', 'Insetticida Cane', '40€', '09/2022', 'disponibile', '100 unita', ['collare piccolo','collare medio', 'collare grande'], 'Pipetta pulci');
-$gatto1 = new AlimentazioneGatto('Purina', 'Boccouncini umidi', 'Alimento per gatti', '5€',  '10/2022',  'non disponibile', '22 unità', ['lettiera standard', 'lettiera misto truciolato' , 'lettiera pallet']);
+
+$rosario = new Utente('Rosario Garufi', 'gjrbjrebgbjb', '45346463367357', 'utente premium', "sconto effettuato");
 $gatto2 = new AlimentazioneGatto('Purina', 'Boccouncini umidi', 'Alimento per gatti', '5€', '10/2022','disponibile', '22 unità', ['lettiera standard', 'lettiera misto truciolato' , 'lettiera pallet']);
-
-var_dump("*** ALimentazione Cane ****");
-var_dump($cane1);
-var_dump($cane2);
-var_dump($accessori_cane);
-var_dump($accessori_cane->getSverminazione());
-;
-var_dump($cane1->getProteine());
-var_dump($cane2->getProteine());
-
-var_dump("*** ALimentazione Gatto ****");
-var_dump($gatto1);
+$carta_credito = new Carta_di_credito('245246637', '204', '10/10/2025', 'visa');
 var_dump($gatto2);
 
+var_dump($rosario);
+var_dump($carta_credito);
+$rosario->cartaCredito($carta_credito);
