@@ -14,3 +14,9 @@ public function functionName( MyClass $variable, String $variable2, Int $variabl
 
 <?php
 
+require_once __DIR__ . "/Models/Prodotto.php";
+
+
+$cane = new Prodotto('Monge', 'crocchette', 'alimentazione-cane', '12', '02/2022', '15kg');
+
+var_dump($cane);
