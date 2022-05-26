@@ -20,13 +20,13 @@ require_once __DIR__ . "/Models/Prodotto.php";
 include __DIR__ . "/Models/AlimentazioneCane.php";
 include __DIR__ . "/Models/AlimentazioneGatto.php";
 include __DIR__ . "/Models/AccessoriCane.php";
+include __DIR__ . "/Models/CartaDiCredito.php";
 
-
-$cane1 = new AlimentazioneCane('Monge', 'crocchette', 'alimentazione cane', '12', '02/2022', '15kg', '13');
-$cane2 = new AlimentazioneCane('Pro Plan', 'Carne disidratata', 'alimentazione cane', '12', '07/2022', '4kg', '13');
-$accessori_cane = New AccessoriCane('Seresto','Accessori Cane', 'Collare Antiparassitario','35€', '09/2023', '0.2g', ['Collare Taglia piccola', 'Collare Taglia media', 'Collare Taglia Grande', 'Pipetta Sverminazione durata 1 mese'], 'Pillola Vermi Fugo');
-$gatto1 = new AlimentazioneGatto('Pro Plan', 'Tonno umido', 'alimentazione gatto', "6", '07/2022', "0.8g", ['lettiera standard', 'sabbia', 'pallet profumato']);
-$gatto2 = new AlimentazioneGatto('Purina', 'Carne in scatola', 'alimentazione gatto', "2", '11/2022', "1kg", ['lettiera standard', 'sabbia', 'pallet profumato']);
+$cane1 = new AlimentazioneCane('Monge', 'Croccantini', 'Cibo per cani' , '15€', 'scandeza: 07/2022', 'disponibile', '12 unità', '0.15g Proteine per 100g');
+$cane2 = new AlimentazioneCane('Pro-Plan', 'carne umida', 'Cibo per cani' , '35€', 'scandeza: 09/2022', 'non disponibile', '7 unità', '0.20g Proteine per 100g');
+$accessori_cane = New AccessoriCane('Seresto', 'Collare Antipulci', 'Insetticida Cane', '40€', '09/2022', 'disponibile', '100 unita', ['collare piccolo','collare medio', 'collare grande'], 'Pipetta pulci');
+$gatto1 = new AlimentazioneGatto('Purina', 'Boccouncini umidi', 'Alimento per gatti', '5€',  '10/2022',  'non disponibile', '22 unità', ['lettiera standard', 'lettiera misto truciolato' , 'lettiera pallet']);
+$gatto2 = new AlimentazioneGatto('Purina', 'Boccouncini umidi', 'Alimento per gatti', '5€', '10/2022','disponibile', '22 unità', ['lettiera standard', 'lettiera misto truciolato' , 'lettiera pallet']);
 
 var_dump("*** ALimentazione Cane ****");
 var_dump($cane1);
@@ -40,5 +40,4 @@ var_dump($cane2->getProteine());
 var_dump("*** ALimentazione Gatto ****");
 var_dump($gatto1);
 var_dump($gatto2);
-var_dump($gatto1->getLettiera());
-var_dump($gatto2->getLettiera());
+
