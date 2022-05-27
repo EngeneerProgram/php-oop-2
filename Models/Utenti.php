@@ -35,13 +35,13 @@ class Utenti {
 
 
     public function calcolaSconto($utente_registrato){
-        if($utente_registrato == true){
+        if($utente_registrato === true){
             $this->sconto = 0.20;
-        }elseif($utente_registrato == false){
+        }elseif($utente_registrato === false){
             $this->sconto = 0;
         }else{
             throw new Exception("Errore, inserire un valore booleano");
-            return 'error';
+            
         }
     }
 

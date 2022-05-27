@@ -3,7 +3,7 @@
 class Utente extends Utenti{
     use nome;
     //login
-    public $username_utente;
+    
     public $password_utente;
     public $identificazione;
 

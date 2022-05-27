@@ -35,11 +35,15 @@ $utente_non_registrato = new Utenti('Rosario', 'Garufi', '15/06/95', true, 'saro
 var_dump($utente_non_registrato);
 
 
-$utente_registrato = new Utente ('Giovanni', 'pierfranco', '12/04/12', 'true', 0, false, 'pippo@hotmail.com', 'giovanni92', 'rfnf8344mf8', 123567854);
+$utente_registrato = new Utente ('Giovanni', 'pierfranco', '12/04/12', 'true', 0, true, 'pippo@hotmail.com', 'giovanni92', 'rfnf8344mf8', 123567854);
 
 $utente_registrato -> registrazioneUtente();
-$utente_registrato ->calcolaSconto(true);
 
-var_dump($utente_registrato);
+try {
+    $utente_registrato ->calcolaSconto("true");
+    var_dump($utente_registrato);
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
 
 
