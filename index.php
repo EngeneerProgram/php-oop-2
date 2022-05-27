@@ -17,20 +17,22 @@ public function functionName( MyClass $variable, String $variable2, Int $variabl
 <?php
 
 require_once __DIR__ . "/Models/Prodotto.php";
-include __DIR__ . "/Models/AlimentazioneCane.php";
-include __DIR__ . "/Models/AlimentazioneGatto.php";
-include __DIR__ . "/Models/AccessoriCane.php";
-require __DIR__ . "/Models/Utente.php";
-require __DIR__ . "/Models/Carta_di_credito.php";
+include __DIR__ . "/Models/Alimentazione.php";
+include __DIR__ . "/Models/Utenti.php";
+include __DIR__ . "/Models/Utenti_registrati.php";
 
 
-$cane1 = new AlimentazioneCane('Monge', 'Croccantini', 'Cibo per cani' , '15€', 'scandeza: 07/2022', 'disponibile', '12 unità', '0.15g Proteine per 100g');
+$cibo_cane = new AlimentazioneAnimale('Monge', 'Croccantini', 'Alimentazione cane', 35, '100g');
+var_dump($cibo_cane);
+$utente_non_registrato = new Utenti('Rosario', 'Garufi', '15/06/95', true, 'saro.garufi1@gmail.com', 0,false);
+var_dump($utente_non_registrato);
 
-$rosario = new Utente('Rosario Garufi', 'gjrbjrebgbjb', '45346463367357', 'utente premium', "sconto effettuato");
-$gatto2 = new AlimentazioneGatto('Purina', 'Boccouncini umidi', 'Alimento per gatti', '5€', '10/2022','disponibile', '22 unità', ['lettiera standard', 'lettiera misto truciolato' , 'lettiera pallet']);
-$carta_credito = new Carta_di_credito('245246637', '204', '10/10/2025', 'visa');
-var_dump($gatto2);
 
-var_dump($rosario);
-var_dump($carta_credito);
-$rosario->cartaCredito($carta_credito);
+$utente_registrato = new Utente ('Giovanni', 'pierfranco', '12/04/12', 'true', 0, false, 'pippo@hotmail.com', 'giovanni92', 'rfnf8344mf8', 123567854);
+
+$utente_registrato -> registrazioneUtente();
+$utente_registrato ->calcolaSconto(true);
+
+var_dump($utente_registrato);
+
+
