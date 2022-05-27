@@ -16,4 +16,8 @@ class Prodotto {
         
     }
 
+    public function getSconto($Utente){
+        $this->sconto = $sconto;
+    }
+
 }
