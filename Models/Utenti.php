@@ -1,8 +1,7 @@
 <?php
 
 class Utenti {
-    public $name;
-    public $cognome;
+    use nome;
     public $data_nascita;
     public $carta_credito;
     public $email;
@@ -30,4 +29,10 @@ class Utenti {
     public function getSconto(){
         return $this->sconto;
     }
+}
+
+
+trait nome{
+    public $nome;
+    public $cognome;
 }
